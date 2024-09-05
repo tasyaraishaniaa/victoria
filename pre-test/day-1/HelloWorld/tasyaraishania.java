@@ -44,14 +44,31 @@ public class tasyaraishania {
 //            System.out.println(myNumber + " lebih kecil dari 50 dan merupakan bilangan ganjil");
 //        }
 
-        int day = 5;
-        String dayName;
-        switch (day) {
-            case 1: dayName = "Sunday"; break;
-            case 2: dayName = "Monday"; break;
-            case 3: dayName = "Tuesday"; break;
-            default: dayName = "Invalid day"; break;
+//        int day = 5;
+//        String dayName;
+//        switch (day) {
+//            case 1: dayName = "Sunday"; break;
+//            case 2: dayName = "Monday"; break;
+//            case 3: dayName = "Tuesday"; break;
+//            default: dayName = "Invalid day"; break;
+//        }
+//        System.out.println(dayName);
+
+        int myNumber = 47;
+        int caseNumber;
+        String keterangan = "bukan bilangan";
+
+        if (myNumber %2 == 0) {
+            caseNumber = 1;
+        } else {
+            caseNumber = 2;
         }
-        System.out.println(dayName);
+
+        switch (caseNumber) {
+            case 1: keterangan = "genap"; break;
+            case 2: keterangan = "ganjil"; break;
+        }
+        System.out.println(myNumber + " merupakan bilangan " + keterangan);
+
     }
 }

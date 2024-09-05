@@ -81,9 +81,9 @@ public class tasyaraishania {
 //            i++;
 //        }
 
-        for (int i = 1; i <= 50; i++) {
-            if (i %15 == 0) {
-                break;
+        for (int i = 1; i <= 30; i++) {
+            if (i %2 == 0) {
+                continue;
             }
             System.out.print(i + " ");
         }

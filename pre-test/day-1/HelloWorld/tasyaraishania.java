@@ -33,15 +33,25 @@ public class tasyaraishania {
 //        int a = 4;
 //        System.out.println(a+ " merupakan bilangan genap? " + (a %2 == 0));
 
-        int myNumber = 47;
-        if (myNumber > 50 && myNumber % 2 == 0) {
-            System.out.println(myNumber + " lebih besar dari 50 dan merupakan bilangan genap");
-        } else if (myNumber > 50 && myNumber % 2 != 0) {
-            System.out.println(myNumber + " lebih besar dari 50 dan merupakan bilangan ganjil");
-        } else if (myNumber < 50 && myNumber % 2 == 0) {
-            System.out.println(myNumber + " lebih kecil dari 50 dan merupakan bilangan genap");
-        } else {
-            System.out.println(myNumber + " lebih kecil dari 50 dan merupakan bilangan ganjil");
+//        int myNumber = 47;
+//        if (myNumber > 50 && myNumber % 2 == 0) {
+//            System.out.println(myNumber + " lebih besar dari 50 dan merupakan bilangan genap");
+//        } else if (myNumber > 50 && myNumber % 2 != 0) {
+//            System.out.println(myNumber + " lebih besar dari 50 dan merupakan bilangan ganjil");
+//        } else if (myNumber < 50 && myNumber % 2 == 0) {
+//            System.out.println(myNumber + " lebih kecil dari 50 dan merupakan bilangan genap");
+//        } else {
+//            System.out.println(myNumber + " lebih kecil dari 50 dan merupakan bilangan ganjil");
+//        }
+
+        int day = 5;
+        String dayName;
+        switch (day) {
+            case 1: dayName = "Sunday"; break;
+            case 2: dayName = "Monday"; break;
+            case 3: dayName = "Tuesday"; break;
+            default: dayName = "Invalid day"; break;
         }
+        System.out.println(dayName);
     }
 }

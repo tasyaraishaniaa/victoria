@@ -63,12 +63,23 @@ public class tasyaraishania {
 //        }
 //        System.out.println(myNumber + " merupakan bilangan " + keterangan);
 
-        for (int i = 1; i <= 50; i++) {
+//        for (int i = 1; i <= 50; i++) {
+//            if (i %2 == 0) {
+//                System.out.print(" Even ");
+//            } else {
+//                System.out.print(i);
+//            }
+//        }
+
+        int i = 1;
+        while (i <= 50) {
             if (i %2 == 0) {
                 System.out.print(" Even ");
+
             } else {
                 System.out.print(i);
             }
+            i++;
         }
 
     }

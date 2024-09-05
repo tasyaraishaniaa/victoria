@@ -1,17 +1,19 @@
 public class MyCalculator {
-    public int add(int a, int b) {
+    int a = 10;
+    int b = 5;
+    public int add() {
         return a+b;
     }
 
-    public int subtract(int a, int b) {
+    public int subtract() {
         return a-b;
     }
 
-    public int multiply(int a, int b) {
+    public int multiply() {
         return a*b;
     }
 
-    public int divide(int a, int b) {
+    public int divide() {
         return a/b;
     }
 }

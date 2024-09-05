@@ -1,5 +1,5 @@
 public class tasyaraishania {
-    public static void main (String[] args) {
+    public static void main(String[] args) {
 
 //        System.out.println("Hello, World!");
 //
@@ -30,8 +30,18 @@ public class tasyaraishania {
 //        r1 = 15;
 //        System.out.println("Luas lingkaran 2= " + phi*r1*r1);
 
-        int a = 4;
-        System.out.println(a+ " merupakan bilangan genap? " + (a %2 == 0));
+//        int a = 4;
+//        System.out.println(a+ " merupakan bilangan genap? " + (a %2 == 0));
 
+        int myNumber = 47;
+        if (myNumber > 50 && myNumber % 2 == 0) {
+            System.out.println(myNumber + " lebih besar dari 50 dan merupakan bilangan genap");
+        } else if (myNumber > 50 && myNumber % 2 != 0) {
+            System.out.println(myNumber + " lebih besar dari 50 dan merupakan bilangan ganjil");
+        } else if (myNumber < 50 && myNumber % 2 == 0) {
+            System.out.println(myNumber + " lebih kecil dari 50 dan merupakan bilangan genap");
+        } else {
+            System.out.println(myNumber + " lebih kecil dari 50 dan merupakan bilangan ganjil");
+        }
     }
 }

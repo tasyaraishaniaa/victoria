@@ -88,13 +88,15 @@ public class tasyaraishania {
 //            System.out.print(i + " ");
 //        }
 
-        int myNumber = 8;
-        int j = 1;
+//        int myNumber = 8;
+//        int j = 1;
+//
+//        for (int i = 1; i <= myNumber; i++)  {
+//            j *= i;
+//        }
+//        System.out.print(j);
 
-        for (int i = 1; i <= myNumber; i++)  {
-            j *= i;
-        }
-        System.out.print(j);
+        
 
     }
 }

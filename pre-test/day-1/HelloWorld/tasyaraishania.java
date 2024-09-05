@@ -81,12 +81,20 @@ public class tasyaraishania {
 //            i++;
 //        }
 
-        for (int i = 1; i <= 30; i++) {
-            if (i %2 == 0) {
-                continue;
-            }
-            System.out.print(i + " ");
+//        for (int i = 1; i <= 30; i++) {
+//            if (i %2 == 0) {
+//                continue;
+//            }
+//            System.out.print(i + " ");
+//        }
+
+        int myNumber = 8;
+        int j = 1;
+
+        for (int i = 1; i <= myNumber; i++)  {
+            j *= i;
         }
+        System.out.print(j);
 
     }
 }

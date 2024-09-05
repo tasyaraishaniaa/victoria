@@ -54,14 +54,22 @@ public class tasyaraishania {
 //        }
 //        System.out.println(dayName);
 
-        int myNumber = 75;
-        String keterangan;
+//        int myNumber = 75;
+//        String keterangan;
+//
+//        switch (myNumber %2) {
+//            case 0: keterangan = "genap"; break;
+//            default: keterangan = "ganjil"; break;
+//        }
+//        System.out.println(myNumber + " merupakan bilangan " + keterangan);
 
-        switch (myNumber %2) {
-            case 0: keterangan = "genap"; break;
-            default: keterangan = "ganjil"; break;
+        for (int i = 1; i <= 50; i++) {
+            if (i %2 == 0) {
+                System.out.print(" Even ");
+            } else {
+                System.out.print(i);
+            }
         }
-        System.out.println(myNumber + " merupakan bilangan " + keterangan);
 
     }
 }

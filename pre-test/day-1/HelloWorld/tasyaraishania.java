@@ -54,19 +54,12 @@ public class tasyaraishania {
 //        }
 //        System.out.println(dayName);
 
-        int myNumber = 47;
-        int caseNumber;
-        String keterangan = "bukan bilangan";
+        int myNumber = 75;
+        String keterangan;
 
-        if (myNumber %2 == 0) {
-            caseNumber = 1;
-        } else {
-            caseNumber = 2;
-        }
-
-        switch (caseNumber) {
-            case 1: keterangan = "genap"; break;
-            case 2: keterangan = "ganjil"; break;
+        switch (myNumber %2) {
+            case 0: keterangan = "genap"; break;
+            default: keterangan = "ganjil"; break;
         }
         System.out.println(myNumber + " merupakan bilangan " + keterangan);
 

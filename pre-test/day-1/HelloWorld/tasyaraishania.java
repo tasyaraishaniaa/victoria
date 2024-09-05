@@ -24,11 +24,14 @@ public class tasyaraishania {
 //        System.out.println("Inisial: " + inisial);
 //        System.out.println("Perempuan? " + isGirl);
 
-        final float phi = 3.14f;
-        int r1 = 10;
-        System.out.println("Luas lingkaran 1= " + phi*r1*r1);
-        r1 = 15;
-        System.out.println("Luas lingkaran 2= " + phi*r1*r1);
+//        final float phi = 3.14f;
+//        int r1 = 10;
+//        System.out.println("Luas lingkaran 1= " + phi*r1*r1);
+//        r1 = 15;
+//        System.out.println("Luas lingkaran 2= " + phi*r1*r1);
+
+        int a = 4;
+        System.out.println(a+ " merupakan bilangan genap? " + (a %2 == 0));
 
     }
 }

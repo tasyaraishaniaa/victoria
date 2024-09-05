@@ -71,15 +71,21 @@ public class tasyaraishania {
 //            }
 //        }
 
-        int i = 1;
-        while (i <= 50) {
-            if (i %2 == 0) {
-                System.out.print(" Even ");
+//        int i = 1;
+//        while (i <= 50) {
+//            if (i %2 == 0) {
+//                System.out.print(" Even ");
+//            } else {
+//                System.out.print(i);
+//            }
+//            i++;
+//        }
 
-            } else {
-                System.out.print(i);
+        for (int i = 1; i <= 50; i++) {
+            if (i %15 == 0) {
+                break;
             }
-            i++;
+            System.out.print(i + " ");
         }
 
     }

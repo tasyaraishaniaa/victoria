@@ -1,0 +1,111 @@
+1. B
+2. B
+3. B
+4. B
+5. C
+6. B
+7. B
+8. B
+9. A
+10. B
+
+11. False
+12. False
+13. True
+14. False
+15. True
+
+16.
+The principles of RESTful architecture:
+- Statelessness
+REST APIs achieve statelessness by ensuring that each request from the client to the server must contain all the information required to understand and process the request. The server does not retain any session information about the client between requests, simplifying scalability and reducing coupling.
+- Uniform interface
+The uniform interface principle establishes a standardized set of operations that all resources in a REST API should support. This includes using HTTP methods (GET, POST, PUT, DELETE) for specific actions on resources, consistent naming conventions, and using hyperlinks to navigate between resources.
+- Resource-based architecture
+REST APIs follow a resource-based architecture, where each piece of data or functionality is represented as a resource. Each resource is identified by a unique URI (Uniform Resource Identifier), and clients can interact with these resources using standard HTTP methods.
+- Self-descriptive messages
+Self-descriptive messages are another constraint that ensures a uniform interface between clients and servers. A self-descriptive message is one that contains all the information that the recipient needs to understand it. There should not be additional information in a separate documentation or in another message.
+- Hypermedia
+The last interface constraint is the hypermedia constraint. Hypermedia is a fancy word for data sent from the server to the client that contains information about what the client can do next–in other words, what further requests it can make. In REST, servers should be sending only hypermedia to clients.
+
+17.
+The HTTP methods:
+- GET
+GET is an HTTP method used for retrieving data. It is known for its idempotent and safe characteristics and is commonly used to fetch resource information from the server. GET requests typically pass parameters in the form of a query string, and the response returns the result in the entity-body to the client.
+- POST
+POST Method is a commonly used HTTP method for sending data to an API. Unlike the PUT and DELETE methods, POST is typically used to create new resources and does not require the client to provide a complete representation of the resource.
+Compared to the PUT method, POST is generally used for creating new resources, while PUT is used for updating existing resources. PUT requires the client to provide a complete representation of the resource, while POST does not have this requirement.
+Additionally, PUT is usually idempotent, meaning that multiple identical PUT requests will produce the same result, while POST may not be idempotent. Here is a guide to the difference between GET and POST for you.
+- DELETE
+The DELETE method is an HTTP method used to remove or delete a resource from a server. It is commonly used to instruct the server to delete a specific resource identified by the provided URL or resource identifier. Unlike other HTTP methods like GET and POST, which retrieve or create resources, the DELETE method is specifically designed for resource deletion.
+- PUT
+The PUT method is used to update or replace an existing resource on the server. It requires the client to send the complete representation of the resource to be updated.
+This means that if a property is not included in the request, it will be removed from the resource on the server. PUT is idempotent, meaning that multiple identical requests will have the same effect as a single request.
+
+18. By embracing an opinionated approach, offering auto-configuration and conventions that streamline application setup and deployment.
+
+19. The @RequestMapping annotation is used to map requests to controllers methods. It has various attributes to match by URL, HTTP method, request parameters, headers, and media types.
+There are also HTTP method specific shortcut variants of @RequestMapping:
+@GetMapping - shortcut for @RequestMapping(method = RequestMethod.GET)
+@PostMapping - shortcut for @RequestMapping(method = RequestMethod.POST)
+@PutMapping - shortcut for @RequestMapping(method = RequestMethod.PUT)
+@DeleteMapping - shortcut for @RequestMapping(method =RequestMethod.DELETE)
+@PatchMapping - shortcut for @RequestMapping(method = RequestMethod.PATCH)
+
+20.
+HTTP defines these standard status codes that can be used to convey the results of a client’s request. The status codes are divided into five categories.
+1xx: Informational – Communicates transfer protocol-level information.
+2xx: Success – Indicates that the client’s request was accepted successfully.
+3xx: Redirection – Indicates that the client must take some additional action in order to complete their request.
+4xx: Client Error – This category of error status codes points the finger at clients.
+5xx: Server Error – The server takes responsibility for these error status codes.
+
+Status Code	Description
+200 OK	Indicates that the request has succeeded.
+301 Moved Permanently	The URL of the requested resource has been changed permanently. The new URL is given by the Location header field in the response. This response is cacheable unless indicated otherwise.
+302 Found	The URL of the requested resource has been changed temporarily. The new URL is given by the Location field in the response. This response is only cacheable if indicated by a Cache-Control or Expires header field.
+304 Not Modified	Indicates the client that the response has not been modified, so the client can continue to use the same cached version of the response.
+400 Bad Request	The server could not understand the request due to incorrect syntax. The client should NOT repeat the request without modifications.
+401 Unauthorized	Indicates that the request requires user authentication information. The client MAY repeat the request with a suitable Authorization header field
+403 Forbidden	Unauthorized request. The client does not have access rights to the content. Unlike 401, the client’s identity is known to the server.
+404 Not Found	The server can not find the requested resource.
+
+21. Specify validation rules in a request validator, add the validator to the API's map of request validators, and assign the validator to individual API methods.
+
+22.
+Dependency injection is a pattern we can use to implement IoC, where the control being inverted is setting an object's dependencies.
+Dependency Injection is the method of providing the dependencies and Inversion of Control is the end result of Dependency Injection.
+
+23. 
+@RequestBody is applicable for the incoming request data.
+@ResponseBody is applicable for the outgoing response data.
+
+24. 
+Jackson is a popular and versatile Java library used for serializing and deserializing Java objects to and from JSON. While Spring supports several JSON mapping libraries, Jackson is the preferred and default when using Spring Boot.
+
+25. It is important to control exception handling so we can properly map exceptions to the ApiError object and inform API clients appropriately.
+
+26. 
+CORS errors happen when a webpage makes a request to a different domain than the one that served the page, and the server responds with an HTTP error because the “Origin” header in the request is not allowed by the server's CORS configuration.
+In addition (or as an alternative) to fine-grained annotation-based configuration, you can define some global CORS configuration as well. This is similar to using a Filter but can be declared within Spring MVC and combined with fine-grained @CrossOrigin configuration. By default, all origins and GET, HEAD, and POST methods are allowed.
+
+27.
+Step 1: Set Up a Spring Boot Project. ...
+Step 2: Configure Spring Security Dependencies. ...
+Step 3: Implement Security Configuration. ...
+Step 4: Define UserDetailsService. ...
+Step 5: Secure REST Endpoints. ...
+Step 6: Test Your Security Configuration.
+Step 7: Implement Token-Based Authentication (Optional)
+Step 8: Add CORS Configuration (If necessary)
+Step 9: Document The Security Flows
+Step 10: Review and Refine
+
+28.
+REST APIs achieve statelessness by ensuring that each request from the client to the server must contain all the information required to understand and process the request. The server does not retain any session information about the client between requests, simplifying scalability and reducing coupling.
+
+29.
+To check if your API is working in Postman, create a new request, enter the API endpoint URL, select the appropriate HTTP method, and click 'Send. ' Review the response status code, time, and body to assess your API's functionality.
+
+30.
+Unit Testing is a kind of white box testing, whereas Integration Testing is a kind of black-box testing. For Unit Testing, accessibility of code is required, as it tests the written code, while for Integration Testing, access to code is not required, since it tests the interactions and interfaces between modules.

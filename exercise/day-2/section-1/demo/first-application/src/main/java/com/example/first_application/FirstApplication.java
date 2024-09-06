@@ -3,6 +3,7 @@ package com.example.first_application;
 import com.example.first_application.GetAssetResponse;
 import com.example.first_application.Request.CreateUserRequest;
 import com.example.first_application.Request.EmployeeUserRequest;
+import com.example.first_application.Request.UpdateUserRequest;
 import com.example.first_application.Response.CreateUserResponse;
 import com.example.first_application.Response.EmployeeUserResponse;
 import org.springframework.boot.SpringApplication;
@@ -18,9 +19,11 @@ import java.util.List;
 @SpringBootApplication
 public class FirstApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(FirstApplication.class, args);
-	}
+    private List<CreateUserResponse> users = new ArrayList<>();
+
+    public static void main(String[] args) {
+        SpringApplication.run(FirstApplication.class, args);
+    }
 
 //	@GetMapping("/assets/{npk}")
 //	public GetAssetResponse getAssetsByNpk(
@@ -150,25 +153,50 @@ public class FirstApplication {
 //
 //	}
 
-	@PostMapping("/employee")
-	public ResponseEntity<List<EmployeeUserResponse>> createUser (
-			@RequestBody EmployeeUserRequest request) {
+//	@PostMapping("/employee")
+//	public ResponseEntity<List<EmployeeUserResponse>> createUser (
+//			@RequestBody EmployeeUserRequest request) {
+//
+//
+//
+//		List<EmployeeUserResponse> employees = new ArrayList<>();
+//
+//		employees.add(EmployeeUserResponse.builder().id(1L).name("AB").age(1).address("CD").phone("123").build());
+//		employees.add(EmployeeUserResponse.builder().id(2L).name("EF").age(2).address("GH").phone("456").build());
+//
+//		if (request.getName() != null && request.getAge() != 0 && request.getPhone() != null) {
+//			employees.add(
+//					EmployeeUserResponse.builder().id(employees.size() + 1L).name(request.getName()).age(request.getAge()).address(request.getAddress()).phone(request.getPhone()).build()
+//			);
+//		}
+//
+//		return new ResponseEntity<>(employees, HttpStatus.OK);
+//
+//	}
 
+    @PostMapping("/users")
+    public ResponseEntity<List<CreateUserResponse>> createUser(
+            @RequestBody CreateUserRequest request) {
 
+        users.add(CreateUserResponse.builder().npk((long) users.size() + 1).fullName(request.getFullName()).build());
 
-		List<EmployeeUserResponse> employees = new ArrayList<>();
+        return new ResponseEntity<>(users, HttpStatus.OK);
+    }
 
-		employees.add(EmployeeUserResponse.builder().id(1L).name("AB").age(1).address("CD").phone("123").build());
-		employees.add(EmployeeUserResponse.builder().id(2L).name("EF").age(2).address("GH").phone("456").build());
+    @PatchMapping("/users/{npk}")
+    public ResponseEntity<List<CreateUserResponse>> updateUser(
+            @RequestBody UpdateUserRequest request,
+            @PathVariable("npk") Long npk)
+    {
+        // looping users
+        for (CreateUserResponse user : users) {
+            // check if Npk Exist or not
+            if (user.getNpk().equals(npk)) {
+                user.setFullName(request.getFullName());
+            }
+        }
 
-		if (request.getName() != null && request.getAge() != 0 && request.getPhone() != null) {
-			employees.add(
-					EmployeeUserResponse.builder().id(employees.size() + 1L).name(request.getName()).age(request.getAge()).address(request.getAddress()).phone(request.getPhone()).build()
-			);
-		}
-
-		return new ResponseEntity<>(employees, HttpStatus.OK);
-
-	}
-
+//		return response
+        return new ResponseEntity<>(users, HttpStatus.OK);
+    }
 }

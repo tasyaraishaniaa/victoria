@@ -1,10 +1,45 @@
-
-
-- get user by id
+- POST user
 URI: /users
-Method: GET
-response:
+Method: POST
+Response:
 {
-    "id": 
-    "name" :
+    "npk" : "68769",
+    "name": "Tasya",
+    "age": 24,
+    "status": "Active"
+}
+
+- Get user by npk
+URI: /users/68769
+Method: GET
+Response:
+{
+    "npk" : "68769",
+    "name": "Tasya",
+    "age": 24,
+    "status": "Active"
+}
+
+- Update user
+URI: /users/68769
+Method: PUT
+Request:
+{
+    "status": "Inactive"
+}
+Response:
+{
+    "npk" : "68769",
+    "name": "Tasya",
+    "age": 24,
+    "status": "Inactive"
+    "updatedAt": "2024-09-06T00:00:00Z"
+}
+
+- Delete user
+URI: /users/68769
+Method: DELETE
+Response:
+{
+    "message": "Users with npk 68769 has been successfully deleted."
 }

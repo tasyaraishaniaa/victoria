@@ -33,7 +33,7 @@ public class EmployeeEntity {
     private LocalDate hireDate;
 
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "department_id", referencedColumnName = "id")
-//    private DepartmentEntity department;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "department_id", referencedColumnName = "id")
+    private DepartmentEntity department;
 }

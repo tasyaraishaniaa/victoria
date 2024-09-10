@@ -1,0 +1,39 @@
+1. B
+2. A
+3. B
+4. A
+5. B
+6. A
+7. B
+8. B
+9. A
+10. C
+11. The API returns a short-lived token (JWT), which expires in 15 minutes, and in HTTP cookies, the refresh token expires in 7 days. JWT is currently used for accessing secure ways on API, whereas a refresh token generates another new JWT access token when it expires or even before.
+
+12. Password encryption is crucial to protecting user credentials. In Spring Security, you can use the BCryptPasswordEncoder class to hash passwords using the bcrypt algorithm. The BCrypt algorithm is a popular choice because it is computationally expensive, which makes it more difficult for an attacker to crack the hash.
+
+13. Go to the Credentials section and create a new OAuth 2 client ID. Select "Web application" as the type, and enter a name for the application. Add an authorized redirect URI: http://localhost:8080/login/oauth2/code/google . Click "Create" to obtain your client_id and client_secret for your properties file.
+
+14. OAuth2 is an authorization framework to enable a third-party application to obtain limited access to an HTTP service through the sharing of an access token.
+
+15. Cross-origin resource sharing (CORS) is an extension of the same-origin policy. You need it for authorized resource sharing with external third parties. For example, you need CORS when you want to pull data from external APIs that are public or authorized.
+
+16. CORS can be configured in Spring Security using the CorsConfiguration class or through annotations like @CrossOrigin at the controller level. This configuration controls which origins, methods, and headers are allowed in HTTP requests.
+
+17. Session fixation attacks involve stealing or fixing a session ID to impersonate a user, and Spring Security protects against it by creating a new session after authentication or otherwise changing the session ID when a user logs in.
+
+18. Stateless Protocol does not require the server to retain the server information or session details. Stateful Protocol require server to save the status and session information. In Stateless Protocol, there is no tight dependency between server and client.
+
+19.
+1. Invalid inputs: Input uploads must be validated from both the server and browser ends.
+2. Irregular or no website security scans: Establish a structured approach that ensures regular and comprehensive scanning by automate security scans, use a security monitoring service, establish a security policy, monitor for vulnerability continuously, use security plugins, regular security audits, educate and train your team, monitor reports and alerts
+3. Authentication and permissions: Enforce strong password policies, implement Multi-Factor Authentication (MFA), limit administrator permissions, harden passwords and authentication for administrators, secure folder and file permissions, secure remote access and admin interfaces, implement regular security audits and monitoring, use a centralized authentication system, restrict external entity access, continuous user education and awareness
+4. Unconsolidated security measures: Centralize security practices with a comprehensive security framework (e.g., Spring Security, OWASP guidelines), integrating tools like firewalls, encryption, and monitoring in a unified approach.
+5. Homegrown security methods and algorithms: Avoid using custom algorithms and instead rely on well-established, tested cryptographic standards (e.g., AES, RSA, SHA-256) and vetted security libraries.
+6. Outdated software, Components with known vulnerabilities & unnecessary/unwanted components: Regularly update all software, including frameworks and plugins, to patch known vulnerabilities. Remove unused or unnecessary components to reduce attack vectors.
+7. Not tested on a regular basis: Perform regular security audits, vulnerability scans, and penetration tests to identify weaknesses. Integrate automated testing tools in your CI/CD pipeline.
+8. Unencrypted sensitive data: Always encrypt sensitive data, both in transit (using SSL/TLS) and at rest (using encryption algorithms like AES-256). Ensure secure storage and handling of encryption keys.
+9. Missing function level access control: Implement role-based access control (RBAC) to ensure users only access functions or resources they are authorized to. Test access control policies to verify they are properly enforced.
+10. Lax attitude towards website security: Foster a security-first culture by educating team members, setting clear security policies, conducting regular training, and holding accountability for security compliance at all levels.
+
+20. Regular security audits and assessments allow businesses to identify vulnerabilities within their IT systems before cybercriminals can exploit these weak points. By conducting these evaluations, companies gain a detailed understanding of potential security risks and can develop strategies to mitigate them effectively. Tools like OWASP ZAP, Burp Suite, and automated scanning tools help in conducting these audits.
